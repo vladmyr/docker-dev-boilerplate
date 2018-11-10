@@ -17,6 +17,8 @@ const app = http.createServer((request, response) => {
   response.writeHead(200, { "Content-Type": "text/html" });
   response.write(str);
   response.end();
+
+  return;
 });
 
 app.listen(PORT);

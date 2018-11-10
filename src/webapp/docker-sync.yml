@@ -1,7 +1,7 @@
 version: "2"
 
 options:
-  verbose: true
+  verbose: false
 
 syncs:
   docker-dev-boilerplate-webapp-sync:
@@ -10,3 +10,4 @@ syncs:
     sync_strategy: "unison"
     sync_host_ip: "127.0.0.1"
     sync_excludes: ["node_modules", ".docker-sync"]
+    watch_excludes: ["package-lock.json"]
