@@ -1,0 +1,12 @@
+version: "2"
+
+services:
+  webapp:
+    working_dir: /var/www
+    command: bash -c "npm install && npm run debug"
+    volumes:
+      - docker-dev-boilerplate-webapp-sync:/var/www:nocopy
+
+volumes:
+  docker-dev-boilerplate-webapp-sync:
+    external: true

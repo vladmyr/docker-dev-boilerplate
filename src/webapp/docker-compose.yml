@@ -1,0 +1,10 @@
+version: "2"
+services:
+  webapp:
+    build: docker/debug
+    expose:
+      - ${PORT}
+    ports:
+      - "${PORT}:${PORT}"
+    container_name: webapp
+    command: ["npm", "run", "up"]
