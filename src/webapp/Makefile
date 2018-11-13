@@ -12,6 +12,9 @@ dcup:
 dcd:
 	docker-compose down
 
+dclg:
+	docker-compose logs
+
 # Docker
 dpsa:
 	docker ps -a

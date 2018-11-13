@@ -1,5 +1,6 @@
 const http = require("http");
 const fs = require("fs");
+const path = require("path");
 
 const PORT = process.env.PORT || 8080;
 const FILEPATH = "./tmp/log.txt";
@@ -12,6 +13,9 @@ const app = http.createServer((request, response) => {
   const str = `Hello world ${index} times`;
 
   // test two way fs synching
+  if (!fs.existsSync(path.dirname(FILEPATH))) {
+    fs.mkdirSync(path.dirname(FILEPATH));
+  }
   fs.writeFileSync(FILEPATH, str);
 
   response.writeHead(200, { "Content-Type": "text/html" });
