@@ -1,0 +1,6 @@
+version: "2"
+services:
+  tests_healthcheck:
+    build: docker/debug
+    container_name: tests_healthcheck
+    command: ["npm", "run", "up"]

@@ -1,0 +1,13 @@
+version: "2"
+
+services:
+  tests_healthcheck:
+    working_dir: /var/www
+    command: bash -c "npm install && npm run up"
+    user: ${USER_ID}:${USER_GID}
+    volumes:
+      - docker-dev-boilerplate-tests-healthcheck-sync:/var/www:nocopy
+
+volumes:
+  docker-dev-boilerplate-tests-healthcheck-sync:
+    external: true

@@ -7,7 +7,10 @@ dsst:
 
 # Docker Compose
 dcup:
-	docker-compose -f docker-compose.yml -f docker-compose-dev.yml up -d
+	docker-compose \
+		-f docker-compose.yml \
+		-f docker-compose-dev.yml \
+		up -d
 
 dcd:
 	docker-compose down

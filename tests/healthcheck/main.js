@@ -4,7 +4,10 @@ const puppeteer = require("puppeteer");
 const PORT = process.env.PORT || 8080;
 
 (async () => {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    executablePath: "google-chrome-stable",
+    args: ["--no-sandbox"]
+  });
   const page = await browser.newPage();
 
   try {
